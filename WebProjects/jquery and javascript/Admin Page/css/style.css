@@ -1,0 +1,66 @@
+.overallOuter{
+    border-radius:30px;
+}
+.tableBackColor{
+    background-color:#9CCCE0;
+}
+
+.overallTableContent td{
+    text-align:center;
+    font-family: cursive;
+    font-weight: bold;
+}
+.firstPage{
+    background-color: #B5ABAB;
+    border-radius:30px;
+    box-shadow:10px 10px 7px #312B2B;
+}
+.chooseContent{
+    overflow:auto; 
+}
+select{
+    text-align-last:center;
+}
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 12px;
+    }
+    h1,
+    h2,
+    div,
+    legend,
+    label {
+        font-size: 12px;
+    }
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=email]:focus,
+input[type=date]:focus,
+input[type=time]:focus {
+    border: 1px solid hsl(0, 16%, 84%);
+    border-radius: 20px;
+}
+
+.adminPendingContent,
+.adminConcludedContent,
+.adminMonthPendingContent,
+.adminMonthConcludedContent,
+.adminWeekPendingContent,
+.adminWeekConcludedContent
+.adminYearPendingContent,
+.adminYearConcludedContent {
+border:2px solid grey;
+}
+
+td,
+th {
+    border: 1px solid black;
+    border-color: black;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+}

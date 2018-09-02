@@ -1,0 +1,467 @@
+{% extends 'comp/base.html' %}
+{% block nav %}
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li><a data-toggle="tab" href="#r1"><b>Day</b></a></li>
+            <li><a data-toggle="tab" href="#r2"><b>Week</b></a></li>
+            <li><a data-toggle="tab" href="#r3"><b>Month</b></a></li>
+            <li><a data-toggle="tab" href="#r4"><b>Year</b></a></li>
+            <ul class="nav nav-pills navbar-right">
+               <li><a>
+                    <form method="post" action="{% url 'filterreport' %}">
+                        {% csrf_token %}
+                        <label for="date">Approximate Date :</label>
+                        <input id="date" name="date" type="date" required>
+                        <button type="submit" class="btn btn-sm btn-primary">Filter Report</button>
+                    </form>
+                </a>
+                </li>
+                <li>
+                    <a href="{% url 'report' %}">
+                        <button class="btn btn-sm btn-primary">Filter Today</button>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+
+        <div class="tab-content">
+            <div id="r1" class="tab-pane fade-in">
+                <ul class="nav nav-pills">
+                    <li><a data-toggle="tab" href="#r11"><b>Overall</b></a></li>
+                    <li><a data-toggle="tab" href="#r12"><b>Pending</b></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="r11" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsdayactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div id="r12" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="r2" class="tab-pane fade-in">
+                <ul class="nav nav-pills">
+                    <li><a data-toggle="tab" href="#r21"><b>Overall</b></a></li>
+                    <li><a data-toggle="tab" href="#r22"><b>Pending</b></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="r21" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsweekactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdayactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsweeknactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div id="r22" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsweeknactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="r3" class="tab-pane fade-in">
+                <ul class="nav nav-pills">
+                    <li><a data-toggle="tab" href="#r31"><b>Overall</b></a></li>
+                    <li><a data-toggle="tab" href="#r32"><b>Pending</b></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="r31" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsmonthactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdayactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsmonthnactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div id="r32" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsmonthnactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="r4" class="tab-pane fade-in">
+                <ul class="nav nav-pills">
+                    <li><a data-toggle="tab" href="#r41"><b>Overall</b></a></li>
+                    <li><a data-toggle="tab" href="#r42"><b>Pending</b></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="r41" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                           <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsyearactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdayactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsyearnactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div id="r42" class="tab-pane fade-in">
+                        <table class="table-responsive table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor"
+                               border="1">
+                            <tr>
+                                <td rowspan="2"><b>College Name</b></td>
+                                <td colspan="2"><b>Last visited</b></td>
+                                <td rowspan="2"><b>Placement-staff</b></td>
+                                <td rowspan="2"><b>Status</b></td>
+                                {% if user.is_superuser %}
+                                    <td rowspan="2"><b>Person Submitted</b></td>
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td><b>Date</b></td>
+                                <td><b>Time</b></td>
+                            </tr>
+                            {% for obj in objectsdaynactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% for obj in objectsyearnactive %}
+                                <tr>
+                                    <td>{{ obj.company_name }}</td>
+                                    <td>{{ obj.company_date }}</td>
+                                    <td>{{ obj.company_time }}</td>
+                                    <td>{{ obj.name }}</td>
+                                    <td>not-active</td>
+                                    {% if user.is_superuser %}
+                                        <td>{{ obj.owner }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    #report{
+        background: black;
+    }
+    #report a{
+        color:white;
+    }
+    </style>
+{% endblock %}

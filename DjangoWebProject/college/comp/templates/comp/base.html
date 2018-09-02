@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--external css-->
+    <style>
+        @media only screen and (max-width: 600px) {
+            * {
+                font-size: 12px;
+            }
+
+            h1,
+            h2,
+            div,
+            legend,
+            label {
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            label {
+                font-size: 85%;
+            }
+        }
+
+        td {
+            background-color: #d2dae2;
+        }
+
+        p {
+            border: 2px solid black;
+        }
+
+        label {
+            font-family: "Comic Sans MS", sans-serif;
+            text-shadow: 3px 2px 2px #B4B2B2, 4px 3px 3px grey;
+        }
+
+        .userNameContent input[type=text],
+        .passwordContent input[type=password] {
+            border-radius: 5px;
+            padding-left: 50px;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus,
+        input[type=number]:focus,
+        input[type=email]:focus,
+        input[type=date]:focus,
+        input[type=time]:focus {
+            border: 1px solid hsl(0, 16%, 84%);
+            border-radius: 20px;
+        }
+        .pendingIcon a {
+            background-color: whitesmoke;
+        }
+
+        .report a {
+            border-radius: 30%;
+            border: 2px solid black;
+            background-color: whitesmoke;
+        }
+        .pendingIcon b,
+        .report b,
+        .userSetting b {
+            color: red;
+        }
+
+        .add a {
+            border-radius: 50%;
+            border: 2px solid black;
+            background-color: whitesmoke;
+        }
+
+        .pendingDrop li {
+            cursor: pointer;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            border-color: black;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            padding: 10px;
+        }
+    </style>
+    <!--bootstrap  link-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--jquery link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+    <!--external Script-->
+    <script>
+        $(document).ready(function () {
+            $('body').css('background-color', 'hsl(0, 16%, 84%)');
+            $('.panel').css('border-radius', '5%');
+            $('.panel').hover(function () {
+                $(this).css({
+                    'cursor': 'pointer',
+                    'box-shadow': '3px 4px 5px grey'
+                })
+            })
+
+            $('.panel').mouseleave(function () {
+                $(this).css({
+                    'box-shadow': 'none'
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="border-radius:0%;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{% url "home" %}" class="navbar-brand"><b>CA</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" >
+                <li id="home"><a  id="logo" href="{% url "home" %}"> <span class="glyphicon glyphicon-home"></span> <b>Home</b></a></li>
+                {% if user.is_superuser %}
+                    <li id="createuser">
+                        <a href="{% url 'register' %}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <b>Createuser</b>
+                        </a>
+                    </li>
+                    <li id="viewuser">
+                        <a href="{% url 'userview' %}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <b>Viewuser</b>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="addcompany">
+                    <a href="{% url "companycreate" %}"><span
+                            class="glyphicon glyphicon-plus"></span>
+                        <b>Add company</b>
+                    </a>
+                </li>
+                <li id="pending">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <b> Pending</b>
+                    </a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="{% url 'postmeetingcompany' %}">Post-meeting</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'remeetcompanyindex' %}">Re-meeting</a></li>
+                    </ul>
+                </li>
+                <li id="report">
+                    <a href="{% url 'report' %}">
+                        <b>Report</b>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-toggle user" data-toggle="dropdown">
+                        <b>hello,{{ request.user.username }}</b>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a>{{ request.user.username }}</a></li>
+                        <li class="divider"></li>
+                        <li><a>Dept</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'logout' %}">Log out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block nav %}
+{% endblock %}
+</body>
+</html>

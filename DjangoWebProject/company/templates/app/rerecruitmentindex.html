@@ -1,0 +1,154 @@
+{% extends 'app/base.html' %}
+{% block link %}
+    <div>
+        <div class="UpcomingAppointments">
+            {% if objects.count == 0 %}
+                <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-responsive">
+                    You Have No Re-Recruitment List
+                </h3>
+            {% else %}
+                <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-responsive">
+                    Re-Recruitment
+                </h3>
+            {% endif %}
+            <div class="container-fluid">
+                <div class="row getInto">
+                    {% for college in objects %}
+                        <div class="hide">
+                            <div class='red{{ college.id }}'>
+                                <hr>
+                                <div class='col-lg-4 col-md-4 col-sm-0 col-xs-0'></div>
+                                <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12 up1'>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> college Name: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_name }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Type of college: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_type }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Date: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_date }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Time: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_time }}</label>
+                                    <div id='tcollegeLocation' class='container-fluid'>
+                                        <div class='row'>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Address</label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.address }}</label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> City: </label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.city }}</label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> State: </label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.state }}</label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Pincode: </label>
+                                            <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.pin_code }}</label>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div id='tcontactDetails' class='container-fluid'>
+                                        <div class='row'>
+                                            <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                                                <fieldset id='tcollegeLocationField'
+                                                          class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                                                    <legend> Contact Details</legend>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Name: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.placement_staff_name }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Ph
+                                                        Number: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.ph_number }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> MailId: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.mailid }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                                                        Avg-count </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.ave_count }}</label>
+                                                </fieldset>
+                                                <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                            </div>
+                                            <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='col-lg-4 col-md-4 col-sm-0 col-xs-0'></div>
+                            </div>
+                        </div>
+                        <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12 '>
+                            <div class='panel col-lg-12 col-md-12 col-sm-12 col-xs-12 upcoming'>
+                                <div class='panel-body col-lg-12 col-md-12 col-sm-12 col-xs-12'
+                                     onclick="funa({{ college.id }})">
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>College-name</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_name }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Date</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_date }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Time</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.college_time }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact person</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.placement_staff_name }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact number</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.ph_number }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact mail Id</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ college.mailid }}</label>
+                                </div>
+                                <a href="/college/{{ college.id }}/rerecruit">
+                                    <button class='btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12 btn-sm'>
+                                        Make Recruitment
+                                    </button>
+                                </a>
+                                <br><br>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $('.hide').hide();
+                            })
+                        </script>
+
+                    {% endfor %}
+                    <script>
+                        function funa(let) {
+                            $('.mainPage').hide();
+                            $('.UpcomingAppointments').hide();
+                            $('.onTouchComp').html($('.red' + let).html());
+                            $('.onTouchComp').show();
+                            $('.postMeetingForm').hide();
+                            $('.reporting').hide();
+                        }
+
+                        $(document).ready(function () {
+                            $('.onTouchComp').click(function () {
+                                $(this).hide()
+                                $('.UpcomingAppointments').show();
+                            });
+                        })
+                    </script>
+                    <style>
+                        .upcoming {
+                            background: #fdcb6e;
+                            padding-bottom: 10px;
+                            border-radius:0%;
+                        }
+
+                        .up1 {
+                            background: #273c75;
+                            color: white;
+                            padding-bottom: 10px;
+                            padding-top: 10px;
+                        }
+
+                        legend {
+                            color: white;
+                        }
+
+                        #recruitment {
+                            background: black;
+                        }
+
+                        #recruitment #text {
+                            color: white;
+                        }
+                    </style>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="onTouchComp">
+    </div>
+
+
+    </body>
+{% endblock %}

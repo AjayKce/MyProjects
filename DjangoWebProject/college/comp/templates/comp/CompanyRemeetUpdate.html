@@ -1,0 +1,37 @@
+{% extends 'comp/base.html' %}
+{% block nav %}
+    <div>
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 addCompany">
+                <div class="form-group">
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Date : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.company_date }}</div>
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Time : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.company_time }}</div>
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Requirements : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.company_requirements }}</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <button type="submit" class="btn btn-primary col-lg-8 col-md-8 col-sm-8 col-xs-8 btn-sm companySubmit">
+                    Make Appointments
+                </button>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <br>
+            </div>
+        </form>
+    </div>
+    <script>
+        $('#id_company_name,#id_company_type,#id_company_date,#id_company_time,#id_door_no,#id_street1').addClass('form-control');
+        $('#id_street2,#id_city,#id_state,#id_pin_code,#id_name,#id_designation,#id_ph_number,#id_mailid,#id_job_description,#id_company_requirements').addClass('form-control');
+        $('#id_company_date').attr('type', 'date');
+        $('#id_company_time').attr('type', 'time');
+    </script>
+{% endblock %}

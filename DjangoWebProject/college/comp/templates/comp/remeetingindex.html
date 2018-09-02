@@ -1,0 +1,191 @@
+{% extends 'comp/base.html' %}
+{% block nav %}
+    <div class="main" xmlns="http://www.w3.org/1999/html">
+
+        <!--Main page Upcoming Appointments-->
+        <div class="UpcomingAppointments">
+            {% if objects.count == 0 %}
+                <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-responsive">
+                    You Have No Remeeting Meeting Appointments
+                </h3>
+            {% else %}
+                <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-responsive">
+                    Remeeting Meeting Companies .........................
+                </h3>
+            {% endif %}
+            <div class="container-fluid">
+                <div class="row getInto">
+                    {% for company in objects %}
+                        <div class="hide">
+                            <div class='red{{ company.id }}'>
+                                <hr>
+                                <div class='col-lg-4 col-md-4 col-sm-0 col-xs-0'></div>
+                                <div class='col-lg-4 col-md-4 col-sm-12 col-xs-12 addCompany'>
+                                    <hr>
+                                    <hr>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Company Name: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_name }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Type of company: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_type }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Date: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_date }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Time: </label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_time }}</label>
+                                    <hr class='col-lg-11 col-md-11 col-sm-12 col-xs-12'>
+                                    <div id='tcompanyLocation' class='container-fluid'>
+                                        <div class='row'>
+                                            <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                            <div class='col-lg-10 col-md-10 col-sm-12 col-xs-12'>
+                                                <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                                <fieldset id='tcompanyLocationField'
+                                                          class='col-lg-10 col-md-10 col-sm-12 col-xs-12'>
+                                                    <center>
+                                                        <legend> Company location</legend>
+                                                    </center>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Door
+                                                        no: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.door_no }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                                                        Street1: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.street1 }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                                                        Street2: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.street2 }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> City: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.city }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> State: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.state }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                                                        Pincode: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.pin_code }}</label>
+                                                </fieldset>
+                                                <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                            </div>
+                                            <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div id='tcontactDetails' class='container-fluid'>
+                                        <div class='row'>
+                                            <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                            <div class='col-lg-10 col-md-10 col-sm-12 col-xs-12'>
+                                                <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                                <fieldset id='tcompanyLocationField'
+                                                          class='col-lg-10 col-md-10 col-sm-12 col-xs-12'>
+                                                    <center>
+                                                        <legend> Contact Details</legend>
+                                                    </center>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Name: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.name }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+                                                        Designation: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.designation }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> Ph
+                                                        Number: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.ph_number }}</label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'> MailId: </label>
+                                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.mailid }}</label>
+                                                </fieldset>
+                                                <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                            </div>
+                                            <div class='col-lg-1 col-md-1 col-sm-0 col-xs-0'></div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <label class='col-lg-12 col-md-12 col-sm-12 col-xs-12'> Job
+                                            Description: </label>
+                                        <div class='onTouchJobDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12'>{{ company.job_description }}</div>
+                                    </div>
+                                    <div class='companyRequirements'>
+                                        <label class=' col-lg-12 col-md-12 col-sm-12 col-xs-12'> Company
+                                            Requirements: </label>
+                                        <div class='onTouchCompanyDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12'>{{ company.company_requirements }}</div>
+                                    </div>
+                                </div>
+                                <div class='col-lg-4 col-md-4 col-sm-0 col-xs-0'></div>
+                                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-lg-4 col-md-4 col-sm-6 col-xs-12'>
+                            <div class='panel'>
+                                <div class='panel-header'>
+                                    <center>
+                                        <b>{{ company.company_name }}</b>
+                                    </center>
+                                </div>
+                                <div class='panel-body' onclick="funa({{ company.id }})">
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Date</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_date }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Time</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.company_time }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact person</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.name }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact number</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.ph_number }}</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>Contact mail Id</label>
+                                    <label class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>{{ company.mailid }}</label>
+                                </div>
+                                <div style="background-color:white;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"
+                                     class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                                    <a href="/com/{{ company.id }}/remeet">
+                                        <button type="submit"
+                                                class='btn btn-success col-lg-6 col-md-6 col-sm-6 col-xs-6 btn-sm'>
+                                            Make Appointments
+                                        </button>
+                                    </a>
+                                    <a href="/com/{{ company.id }}/deletereemeet">
+                                        <button type="submit"
+                                                class='btn btn-success col-lg-6 col-md-6 col-sm-6 col-xs-6 btn-sm'>
+                                            Rejected
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <br><br>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $('.hide').hide();
+                            })
+                        </script>
+
+                    {% endfor %}
+                    <script>
+                        function funa(let) {
+                            $('.mainPage').hide();
+                            $('.UpcomingAppointments').hide();
+                            $('.onTouchComp').html($('.red' + let).html());
+                            $('.onTouchComp').show();
+                            $('.postMeetingForm').hide();
+                            $('.reporting').hide();
+                        }
+
+                        $(document).ready(function () {
+                            $('.onTouchComp').click(function () {
+                                $(this).hide()
+                                $('.UpcomingAppointments').show();
+                            });
+                        })
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--ADD company-->
+
+    <!--onTouchOnUpcomingAppointments-->
+    <div class="onTouchComp">
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#pending').css('background', 'black')
+            $('#pending b').css('color', 'white')
+        })
+    </script>
+
+    </body>
+{% endblock %}

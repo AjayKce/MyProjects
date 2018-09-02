@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% block link %}
+    <div>
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New-Date : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.college_date }}</div>
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New-Time : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.college_time }}</div>
+                    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Avg-Count : </label>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">{{ form.ave_count }}</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                <button type="submit" class="btn btn-primary col-lg-8 col-md-8 col-sm-8 col-xs-8 btn-sm collegeSubmit">
+                    Make Recruitment
+                </button>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <br>
+            </div>
+        </form>
+    </div>
+    <script>
+        $('#id_college_date,#id_college_time,#id_ave_count').addClass('form-control');
+        $('#id_college_date,#id_college_time,#id_ave_count').val("")
+        $('#id_college_date').attr('type', 'date');
+        $('#id_college_time').attr('type', 'time');
+    </script>
+{% endblock %}

@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--external css-->
+    <link rel=stylesheet href="css/style.css">
+    <!--bootstrap  link-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--jquery link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <!--external Script-->
+    <script src="script/script.js"></script>
+
+
+
+</head>
+
+<body id="full">
+    <div class="container-fluid loginpageMainContent">
+        <div class="row" id="loginpage">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+            <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4">
+            </div>
+            <div class="openingPage col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                <div class="session-content row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 userNameLabel">
+                        <label for="userNameInput">User Name : </label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 userNameContent" style="position:relative;">
+                        <input type="text" id="userNameInput" class="form-control" placeholder="Email">
+                        <span class="glyphicon glyphicon-user form-control-feedback pass-ico" style="color:grey;"></span>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 passWordLabel">
+                        <label for="passwordInput">Password : </label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 passwordContent" style="position:relative;">
+                        <input type="password" id="passwordInput" class="form-control" placeholder="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback pass-ico" style="color:grey;"></span>
+                        <span class="forget">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span id="forgetPassword"> forget password ?</span>
+                        </span>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <br>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                    <div class="btn btn-success col-lg-4 col-md-4 col-sm-4 col-xs-4 loginSubmit" id="submit">login</div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4 ">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid resetPasswordMainContent">
+        <div class="row" id="passreset">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+            <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4">
+            </div>
+            <div class="openingPage col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                <div class="session-content row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 userNameLabel">
+                        <label for="resetNameInput">Email : </label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 userNameContent">
+                        <input type="text" id="resetNameInput" class="form-control" placeholder="Email">
+                        <span class="glyphicon glyphicon-envelope form-control-feedback pass-ico" style="color:grey;"></span>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blankSpace"></div>
+                    <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0 "></div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sendPassword">
+                        <div class=" sendClick">re-send</div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0 "></div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4 ">
+            </div>
+        </div>
+    </div>
+
+
+    <!--HOME PAGE-->
+    <div class="mainPage">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="logo">LOGO</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <div class="add">
+                                <a class="navbar-brand">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pendingIcon">
+                                <a class="navbar-brand dropdown-toggle" data-toggle="dropdown">
+                                    <b>Pending</b>
+                                    <span class="badge" id="pendingCount">1</span>
+                                </a>
+                                <ul class="dropdown-menu pendingDrop">
+                                    <li>
+                                        <a class="a clickPostMeeting">Post-meeting</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a class="a clickReMeeting">Re-meeting</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="report">
+                                <a class="navbar-brand">
+                                    <b>Report</b>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="userSetting">
+                                <a class="navbar-brand dropdown-toggle user" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a>User Name</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a>Dept</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="">Log out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Main page Upcoming Appointments-->
+        <div class="UpcomingAppointments">
+            <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-responsive">Upcoming Appointments.....</h3>
+            <div class="container-fluid">
+                <div class="row getInto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--ADD company-->
+    <div id="addCom">
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 addCompany">
+            <label for="companyName" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Company Name : </label>
+            <label id="companyNameRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please enter</label>
+            <input type="text" placeholder="Enter the company Name" class="form-control input-md" id="companyName">
+            <label for="typeOfCompany" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Type of company : </label>
+            <label id="companyTypeRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please enter</label>
+            <select class="form-control" id="typeOfCompany">
+                <option>Choose</option>
+                <option value="Product">Product</option>
+                <option value="Service">Service</option>
+            </select>
+            <label for="companyDate" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Date :</label>
+            <label id="companyDateRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please enter</label>
+            <input type="date" class="form-control" id="companyDate">
+            <label for="companyTime" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Time :</label>
+            <label id="companyTimeRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please enter</label>
+            <input type="time" class="form-control" id="companyTime">
+            <hr>
+            <hr>
+            <!--Company Location-->
+            <div id="companyLocation" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="companyLocationField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Company location</legend>
+                            </center>
+                            <label for="doorNo" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Door no : </label>
+                            <label id="companyDoorNoRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6" id="doorNo">
+                            <label for="street1" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street1 : </label>
+                            <label id="companyStreet1Res" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="street1">
+                            <br>
+                            <br>
+                            <label for="street2" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street2 : </label>
+                            <label id="companyStreet2Res" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="street2">
+                            <br>
+                            <br>
+                            <label for="city" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">City : </label>
+                            <label id="companyCityRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="city">
+                            <br>
+                            <br>
+                            <label for="state" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">State : </label>
+                            <label id="companyStateRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="state">
+                            <br>
+                            <br>
+                            <label for="pinCode" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Pincode : </label>
+                            <label id="companyPincodeRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="number" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="pinCode">
+                            <br>
+                            <br>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!--Contact Details-->
+            <div id="contactDetails" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="contactDetailsField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Contact Details</legend>
+                            </center>
+                            <label for="contactName" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Name : </label>
+                            <label id="companyContactPersonRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                id="contactName">
+                            <label for="designation" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Designation:</label>
+                            <label id="companyDesignationRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="text" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6" id="designation">
+                            <br>
+                            <br>
+                            <label for="phoneNumber" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Ph Number : </label>
+                            <label id="companyPhNumberRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="number" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6" id="phoneNumber">
+                            <br>
+                            <br>
+                            <label for="mailId" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">mailId : </label>
+                            <label id="companyMailIdRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                            <input type="email" placeholder="Enter...." class="form-control input-md col-lg-6 col-md-6 col-sm-6 col-xs-6" id="mailId">
+                            <br>
+                            <br>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <div class="jobDescription">
+                <label for="jobDescriptionContent" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Job Description:</label>
+                <label id="companyJobRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                <textarea id="jobDescriptionContent" class="form-control" rows="6" placeholder="Add Some Description . . ."></textarea>
+            </div>
+            <div class="companyRequirements">
+                <label for="companyRequirementsContent" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Company Requirements:</label>
+                <label id="companyReqRes" class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="color:red;">please fill it</label>
+                <textarea id="companyRequirementsContent" class="form-control" rows="6" placeholder="Add Some requirements . . ."></textarea>
+            </div>
+            <br>
+            <div class="btn btn-info col-lg-4 col-md-4 col-sm-4 col-xs-4 btn-sm companyReset">Reset</div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+            <div class="btn btn-info col-lg-4 col-md-4 col-sm-4 col-xs-4 btn-sm companySubmit">Submit</div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <br>
+        </div>
+    </div>
+
+    <!--onTouchOnUpcomingAppointments-->
+    <div class="onTouchComp">
+        <hr>
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 addCompany">
+            <hr>
+            <hr>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Company Name : </label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Ukraine</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Type of company : </label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Product</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Date :</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">4th Dec 2017</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Time :</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">06:06:59</label>
+            <hr class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <!--TouchCompany Location-->
+            <div id="tcompanyLocation" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="tcompanyLocationField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Company location</legend>
+                            </center>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Door no : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">20-41</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street1 : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Address</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street2 : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Address</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">City : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Coimbatore</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">State : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">TamilNadu</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Pincode : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">629152</label>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <br>
+            <!--TouchContact Details-->
+            <div id="tcontactDetails" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="tcompanyLocationField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Contact Details</legend>
+                            </center>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Name : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Robin</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Designation : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Field</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Ph Number : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">9488955981</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">MailId : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">robin@gmail.com</label>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">Job Description:</label>
+                <div class="onTouchJobDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some
+                    Company Description.Some Company Description.Some Company Description.Some Company Description.
+
+                </div>
+            </div>
+            <div class="companyRequirements">
+                <label class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">Company Requirements:</label>
+                <div class="onTouchCompanyDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some
+                    Company Description.Some Company Description.Some Company Description.Some Company Description.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <br>
+        </div>
+    </div>
+
+    <!--on Touch Post Meeting-->
+    <div class="onTouchPost">
+        <hr>
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 addCompany">
+            <hr>
+            <hr>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Company Name : </label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Ukraine</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Type of company : </label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Product</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Date :</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">4th Dec 2017</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Time :</label>
+            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">06:06:59</label>
+            <hr class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+            <!--TouchCompany Location-->
+            <div id="tcompanyLocation" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="tcompanyLocationField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Company location</legend>
+                            </center>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Door no : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">20-41</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street1 : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Address</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Street2 : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Address</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">City : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Coimbatore</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">State : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">TamilNadu</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Pincode : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">629152</label>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <br>
+            <!--TouchContact Details-->
+            <div id="tcontactDetails" class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        <fieldset id="tcompanyLocationField" class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                            <center>
+                                <legend>Contact Details</legend>
+                            </center>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Name : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Robin</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Designation : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Field</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">Ph Number : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">9488955981</label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">MailId : </label>
+                            <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">robin@gmail.com</label>
+                        </fieldset>
+                        <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <label class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">Job Description:</label>
+                <div class="onTouchJobDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some
+                    Company Description.Some Company Description.Some Company Description.Some Company Description.
+
+                </div>
+            </div>
+            <div class="companyRequirements">
+                <label class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">Company Requirements:</label>
+                <div class="onTouchCompanyDescriptionContent col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some Company Description.Some
+                    Company Description.Some Company Description.Some Company Description.Some Company Description.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <br>
+        </div>
+    </div>
+
+
+
+    <!--post Meeting-->
+    <div class="postMeeting">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 1</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 2</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 3</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 4</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 5</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 6</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 7</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 8</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 9</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 10</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 11</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 12</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 1</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 2</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 3</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 4</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 5</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 6</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 7</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 8</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 9</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 10</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 11</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="com">Company 12</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="postMeetingForm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 postMeetingOuter">
+                    <div class="postMeetingMainContent">
+                        <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <h2>Post-Meeting Form</h2>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                            <br>
+                            <button class="btn btn-md btn-primary postMeetingDescription">Description</button>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <center>
+                                <h2>Company Name</h2>
+                            </center>
+                            <hr>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <h3>
+                                    <label>Meeting Description</label>
+                                </h3>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <textarea class="form-control postMeetingDescriptionContent" rows="10">
+                                </textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <hr>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <button class="btn btn-success acceptPostButton">Accepted</button>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <button class="btn btn-success rejectPostButton">Rejected</button>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                        <button class="btn btn-success  reMeetingPostButton">Re-Meeting</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--PostRemeeting-->
+    <div class="container-fluid postReMeetingForm">
+        <div class="row">
+            <br>
+            <br>
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 postReMeetingMainContent">
+                <div class=" form-inline">
+                    <center>
+                        <br>
+                        <br>
+                        <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Time :</label>
+                    </center>
+                    <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <input type="time" class="form-control remeetTimeremeetTimeremeetDateremeetRequirements">
+                        <br>
+                        <br>
+                    </span>
+                    <center>
+                        <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Date :</label>
+                    </center>
+                    <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <input type="date" class="form-control remeetDate">
+                        <br>
+                        <br>
+                    </span>
+                    <center>
+                        <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6">New Requirements :</label>
+                    </center>
+                    <span class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <textarea class="form-control remeetRequirements" rows="5"></textarea>
+                        <br>
+                        <br>
+                    </span>
+                    <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+                    <center>
+                        <button class="btn btn-md btn-success col-lg-8 col-md-8 col-sm-12 col-xs-12 makeAnAppointments">Make an Appointments</button>
+                        <hr class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    </center>
+                    <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+
+        </div>
+    </div>
+
+    <!--Re-Meeting-->
+    <div class="reMeeting">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 1</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 2</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 3</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 4</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 5</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 6</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 7</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 8</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 9</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 10</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 11</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 12</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 1</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 2</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 3</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 4</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 5</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 6</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 7</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 8</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 9</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 10</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 11</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <h3 class="rcom">Company 12</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Report-->
+    <div class="reporting">
+        <div class="container-fluid">
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 reportFull">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportDay">
+                        <h3>Day</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportDayContent ">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportOverall">
+                                <h3>Overall</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportOverallContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportPending">
+                                <h3>Pending</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportPendingContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportConcluded">
+                                <h3>Concluded</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportConcludedContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportWeek">
+                        <h3>Week</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportWeekContent">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportWeekOverall">
+                                <h3>Overall</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportWeekOverallContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportWeekPending">
+                                <h3>Pending</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportWeekPendingContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportWeekConcluded">
+                                <h3>Concluded</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportWeekConcludedContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportMonth">
+                        <h3>Month</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportMonthContent">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportMonthOverall">
+                                <h3>Overall</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportMonthOverallContent " style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportMonthPending">
+                                <h3>Pending</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportMonthPendingContent " style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportMonthConcluded">
+                                <h3>Concluded</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportMonthConcludedContent " style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportYear">
+                        <h3>Year</h3>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportYearContent">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportYearOverall">
+                                <h3>Overall</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportYearOverallContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportYearPending">
+                                <h3>Pending</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportYearPendingContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reportYearConcluded">
+                                <h3>Concluded</h3>
+                            </div>
+                            <div class="table-responsive table-bordered reportYearConcludedContent" style="border:2px solid #B5ABAB;">
+                                <table class="table col-lg-12 col-md-12 col-sm-12 col-xs-12 tableBackColor" border="1">
+                                    <tr>
+                                        <td rowspan="2">S.No</td>
+                                        <td rowspan="2">Company Name</td>
+                                        <td colspan="2">Last visited</td>
+                                        <td rowspan="2">Person Visited</td>
+                                        <td rowspan="2">Status</td>
+                                        <td rowspan="2">Comments</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date</td>
+                                        <td>Time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0"></div>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <label style="color:black;cursor:pointer;">Export as Mail or Download </label>
+                                    <span style="color:blue;" class="glyphicon glyphicon-download"></span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="period">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 periodContent" style="padding:0px;">
+                            <h3 class="col-lg-12 col-md-12 col-sm-12 col-xs-12 s">Period</h3>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 s">
+
+                                <label for="from">From :</label>
+                                <input type="date" class="form-control" id="from">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 s">
+                                <label for="to">To :</label>
+                                <input type="date" class="form-control" id="to">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <br>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

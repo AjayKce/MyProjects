@@ -1,0 +1,63 @@
+input[type=text],
+input[type=number] {
+    padding-left: 50px;
+    margin: 0px;
+    width: 40%;
+    height: 30px;
+    box-shadow: 1px 2px 1px rgb(126, 46, 239);
+    background:transparent;
+    color:white;
+}
+input[type=submit]{
+    width:150px;
+    height:50px;
+    margin-top:15px;
+    background:transparent;
+    color:white;
+    background:transparent;
+
+}
+
+body {
+    background:transparent url('../images/bg.jpg') no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+}
+b{
+    text-shadow:1px 2px 2px #E523BE,1px 2px 2px grey;
+}
+textarea {
+    background:transparent;
+    color:white;
+    width: 48%;
+    box-shadow: 1px 2px 1px rgb(126, 46, 239);
+}
+
+input[type=checkbox] {
+    box-shadow: 1px 2px 1px rgb(126, 46, 239);
+}
+
+select {
+    box-shadow: 1px 2px 1px rgb(126, 46, 239);
+}
+
+fieldset {
+    background-color:transparent #353030;
+    border: 3px ridge white;
+    color: white;
+    font-size: 25px;
+    box-shadow: 1px 2px 6px black, 2px 3px 8px grey;
+}
+
+legend {
+    color: #B6A0F4;
+    font-style: bold;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px grey, 1px 2px white;
+}
+
+fieldset {
+    width: 50%;
+    margin: 0 auto;
+}

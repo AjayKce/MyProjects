@@ -1,0 +1,125 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block link %}
+    <img src="{% static 'images/5.jpg' %}" width="100%">
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h3>This is a product of ctOS a private company.</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <h3>This is a personal HR assistant for recruiters.</h3>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <blockquote>
+                    <p>For 50 years, WWF has been protecting the future of nature. The world's leading conservation
+                        organization, WWF works in 100 countries and is supported by 1.2 million members in the United
+                        States and close to 5 million globally.</p>
+                    <footer>From WWF's website</footer>
+                </blockquote>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <blockquote>
+                    <p>The ctOS corporate increased its share and still now holding the brand name for its Income and
+                        management.</p>
+                    <footer>BBC news</footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="row">
+            <h1>Services</h1>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 box">
+                <center>
+                    <img src="{% static 'images/b1.png' %}" height="40%" width="40%">
+                </center>
+                <br>
+                <p>It has a user login interface where our company files are highly secured by using standard encoding
+                    and decoding for our files.</p>
+                <br>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 box1">
+                <center>
+                    <img src="{% static 'images/b2.png' %}" height="40%" width="40%">
+                </center>
+                <br>
+                <p>HR assistant makes the documentation of the recruitment process so easy for our staff and keeps us
+                    punctual</p>
+                <br>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 box1">
+                <center>
+                    <img src="{% static 'images/b3.png' %}" height="40%" width="40%">
+                </center>
+                <br>
+                <p>Highly secured database with standard hashing of every content including comma and dot.</p>
+                <br>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12"></div>
+
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 box">
+                <center>
+                    <img src="{% static 'images/b4.png' %}" height="40%" width="40%">
+                </center>
+                <br>
+                <p>No laptap or battery drained ? don't worry, we have mobo respnsive webcontent. Its easy as you
+                    like.</p>
+                <br>
+            </div>
+        </div>
+        <br><br>
+
+    </div>
+    <div class="container-fluid">
+        <div class="row foot">
+            <center>
+                © Copyrights reserved-18.<br>
+                Designed by Indeed Designers.
+            </center>
+        </div>
+    </div>
+    <style>
+        .navbar {
+            margin-bottom: 0px;
+        }
+
+        .box {
+            background: #34495e;
+            color: white;
+            padding: 20px 20px 20px 20px;
+        }
+
+        .box1 {
+            background: #7f8c8d;
+            color: white;
+            padding: 20px 20px 20px 20px;
+        }
+
+        .foot {
+            background: #8395a7;
+            padding: 30px 30px 30px 30px;
+            color: white;
+        }
+
+        #home {
+            background: black;
+        }
+
+        #home a {
+            color: white;
+        }
+    </style>
+
+{% endblock %}

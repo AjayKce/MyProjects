@@ -1,0 +1,65 @@
+{% extends 'app/base.html' %}
+
+{% block link %}
+    <body>
+    {% if user.is_authenticated %}
+        {% if user.is_superuser %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+                    <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <form method="post" action="{% url 'register' %}">
+                            {% csrf_token %}
+                            <div class="registerform">
+                                <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                                <div class="registerformContent col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <br>
+                                    <label for="id_username">User Name : </label>
+                                    {{ form.username }}
+                                    <label for="id_email">Email : </label>
+                                    {{ form.email }}
+                                    <label for="id_password1">Password : </label>
+                                    {{ form.password1 }}
+                                    <label for="id_password2">Password Confirmation : </label>
+                                    {{ form.password2 }}
+                                    <br>
+                                    <button class="btn btn-success btn-sm col-lg-4 col-md-4 col-sm-12 col-xs-12">Submit
+                                    </button>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0">
+                        {% if form.errors %}
+                            <div class="well well-sm">{{ form.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="well"><b>You have no access to create User</b><a href="/home"> <b>Return</b></a>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="well"><b>You have not login Yet, please</b><a href="{% url 'login' %}"> <b>Login</b></a>
+        </div>
+    {% endif %}
+
+    <style>
+        #createuser{
+            background-color:black;
+        }
+        #createuser a{
+            color:white;
+        }
+    </style>
+
+    </body>
+
+{% endblock %}

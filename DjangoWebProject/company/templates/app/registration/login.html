@@ -1,0 +1,79 @@
+{% extends 'app/base.html' %}
+
+{% block link %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% endif %}
+    {% endif %}
+    <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><br></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                {% if user.is_authenticated %}
+                    <center><h3 class="well">You are already logged in</h3></center>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                    <h2>User Profile</h2>
+                                    <label>Username</label> : {{ user.username }}<br>
+                                    <label>Email-Id</label> : {{ user.email }}
+                                    <center>
+                                    <h3>Are you sure, you want to logout?</h3>
+                                    <a href="{% url 'index' %}"><button class="btn btn-success">Go to home</button></a> <a href="{% url 'logout' %}"><button class="btn btn-danger">Logout</button></a>
+                                </center>
+                            </div>
+                    </div>
+                {% else %}
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="adminform">
+                            <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+                            <div class="adminformContent col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <br>
+                                <label for="id_username">User Name : </label>
+                                {{ form.username }}
+                                <label for="id_password">Password : </label>
+                                {{ form.password }}
+                                <br>
+                                <div class="col-lg-4 col-md-4 col-sm-0 col-xs-0"></div>
+                                <button class="btn btn-success btn-sm col-lg-4 col-md-4 col-sm-12 col-xs-12">Submit
+                                </button>
+                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+                                {% if user.is_superuser %}
+                                    <span class="col-lg-8 col-md-8 col-sm-12 col-xs-12"><a href="">Register Now</a><br></span>
+                                {% endif %}
+                                <br class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <br class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <br class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-0 col-xs-0"></div>
+                        </div>
+                    </form>
+                {% endif %}
+        </div>
+    </div>
+    </div>
+    {% if form.errors %}
+        <center>
+            <div class="well well-sm">
+                ENTER CORRECT USERNAME AND PASSWORD
+            </div>
+        </center>
+    {% endif %}
+    </body>
+<style>
+.log{
+    background:black;
+}
+.log b,.log span{
+    color:white;
+}
+</style>
+{% endblock %}

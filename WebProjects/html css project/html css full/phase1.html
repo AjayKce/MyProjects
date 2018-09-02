@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;">
+<head >
+<title>document</title>
+<script src="jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="phase1.css">
+<script>
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+    function escape(s) {
+      // Bonus level!
+
+      Object.defineProperty(console, 'foo', 
+         { get : function() { throw 'nooo!' } });
+
+      var code = 'with(window.console && console.foo || {}) {\n\t'+s+'\n}';
+      console.log(code);
+
+      try {
+        console.log(eval(code));
+      } catch (e) {
+        console.log(e);
+      }
+    }
+});   
+</script>
+</head>
+
+<body>
+    <span class="navbar">
+    <li><span id="home"></span><a href="">Home</a></li>
+    <input type="checkbox" name="same" id="education"><label id="edlabel" for="education">Education</label>
+    <input type="checkbox" name="same" id="tutorial"><label id="tulabel" for="tutorial">Tutorial</label>
+    <li><span id="acheivements"></span><a href="">Acheivements</a></li>
+    <input type="radio" name="user" id="user"><label id="userlabel" for="user">User</label>
+    <table class="tutorial_table">
+    <tr><td><a href="">Html</a></td><td><a href="">Css</a></td><td><a href="">Bootstrap</a></td></tr>
+    <tr><td><a href="">JavaScript</a></td><td><a href="">AngularJs</a></td><td><a href="">Jquery</a></td></tr>
+    <tr><td><a href="">ReactJs</a></td><td><a href="">Foundation</a></td><td><a href="">Semantic UI</a></td></tr>
+    <tr><td><a href="">NodeJs</a></td><td><a href="">ASP.NET</a></td><td><a href="">ADO.NET</a></td></tr>
+    </table>
+    <table class="education_table">
+        <tr><td><a href="">Machine Learning</a></td><td><a href="">Artificial Intelligence</a></td><td><a href="">Internet Of Things</a></td><td><a href="">Cloud Computing</a></td></tr>
+        <tr><td><a href="">Cyber Security</a></td><td><a href="">Fundamentals Of Computing</a></td><td><a href="">Big Data</a></td><td><a href="">NanoTechnology</a></td></tr>
+        <tr><td><a href="">Food Technology</a></td><td><a href="">Database Manupulation</a></td><td><a href="">Scripting Language</a></td><td><a href="">Programming Technology</a></td></tr>
+        <tr><td><a href="">Compiler Design</a></td><td><a href="">Mathematical Approach</a></td><td><a href="">Ethical Hacking</a></td><td><a href="">Embedded Design</a></td></tr>
+    </table>
+    <table class="user">
+        <input type="radio" id="login" name="user"><label for="login" id="loginlabel">Login</label>
+        <input type="radio" id="signup" name="user"><label for="signup" id="signuplabel">Sign Up</label>
+        <tr class="getlost"><td>User Name : </td><td><input type="text" id="userentry"></td></tr>
+        <tr class="required"><td>First Name : </td><td><input type="text" id="fname"></td></tr>
+        <tr class="required"><td>Last Name : </td><td><input type="text" id="lname"></td></tr>
+        <tr class="required"><td>Email : </td><td><input type="email" id="email"></td></tr>
+        <tr class="required"><td>Phone No : </td><td><input type="number" id="phno"></td></tr>
+        <tr class="required"><td>Gender : </td><td><input type="radio" name="gender" id="m"><label for="m">Male</label>  <input type="radio" name="gender" id="f"><label for="f">Female</label></td></tr>
+        <tr><td>Password : </td><td><input type="password" id="passwordentry"></td></tr>
+        <tr class="required"><td>Re-Enter Password : </td><td><input type="password" id="passwordreentry"></td></tr>
+        <tr><td colspan="2"><input type="button" value="submit"></td></tr>
+    </table>
+    </span>
+<ul class="sidebar">
+    <li><span id="aboutus"></span><a href="">About Us</a></li>
+    <li><span id="certification"></span><a href="#s2">Certification</a></li>
+    <li><span id="Projects"></span><a href="#s3">Projects</a></li>
+    <li><span id="Rules"></span><a href="#s4">Rules and Regulation</a></li>
+</ul>
+<div class="sider">
+    <hr><hr>
+    <div id="scroll">
+        <center><h1 id="s1">About Us</h1></center>
+    <hr><hr>
+    <p id="aboutuspara">ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages</p>
+        <span id="s2"><br><br><br><br></span>
+        <hr><hr>
+        <center><h1>Certification</h1></center>
+    <hr><hr>
+    <p id="aboutuspara">ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages</p>
+        <span id="s3"><br><br><br><br></span>
+        <hr><hr>
+        <center><h1>Projects</h1></center>
+    <hr><hr>
+        <div class="projectcontent">
+            <div class="imgcontent">
+            <input type="radio" id="img1" name="small"><label for="img1"><img src="1.JPG" height="50px" width="50px" class="img1"></label>
+            <input type="radio" id="img2" name="small"><label for="img2"><img src="2.JPG" height="50px" width="50px" class="img2"></label>
+            <input type="radio" id="img3" name="small"><label for="img3"><img src="3.JPG" height="50px" width="50px" class="img3"></label>
+            <input type="radio" id="img4" name="small"><label for="img4"><img src="4.JPG" height="50px" width="50px" class="img4"></label>
+            <img id="main1" src="1.JPG" height="200px" width="300px">
+            <img id="main2" src="2.JPG" height="200px" width="300px">
+            <img id="main3" src="3.JPG" height="200px" width="300px">
+            <img id="main4" src="4.JPG" height="200px" width="300px">
+            </div>
+            <div class="animationcontent">
+            <input type="radio" id="ani1" name="ani"><label for="ani1">Rotate Clockwise</label>
+            <input type="radio" id="ani2" name="ani"><label for="ani2">Rotate AntiClockwise</label>
+            <input type="radio" id="ani3" name="ani"><label for="ani3">ScaleBig</label>
+            <input type="radio" id="ani4" name="ani"><label for="ani4">ScaleSmall</label>
+            <input type="radio" id="ani5" name="ani"><label for="ani5">SkewX</label>
+            <input type="radio" id="ani6" name="ani"><label for="ani6">SkewY</label>
+            <input type="radio" id="ani7" name="ani"><label for="ani7">SkewXY</label>
+            <input type="radio" id="ani8" name="ani"><label for="ani8">Matrix</label>
+            <input type="radio" id="ani9" name="ani"><label for="ani9">Stop</label><br><br><br><br>
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            <img src="3.JPG" height="50px" width="50px" class="ani3">
+            <img src="4.JPG" height="50px" width="50px" class="ani4">
+            <img src="1.JPG" height="50px" width="50px" class="ani1">
+            <img src="2.JPG" height="50px" width="50px" class="ani2">
+            </div>
+        </div>
+        <span id="s4"><br><br><br><br></span>
+        <hr><hr>
+        <center><h1>Rules and Regulation</h1></center>
+    <hr><hr>
+    <p id="aboutuspara">ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages ASP.NET is a web devolopement platform which allows devolopers to create dynamic Web Application by using any of the 
+        server side scripting languages</p>
+        <span id="s3"><br><br><br><br></span>
+        <hr><hr>
+    </div>
+</div>
+</body>
+</html>

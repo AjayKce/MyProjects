@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'jquery/j.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static 'jquery/j.min.js' %}"></script>
+    <script src="{% static 'jquery/j.min.js' %}"></script>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <link rel="icon" href="{% static 'images/icon.png' %}">
+    <title>HR Assistant</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="border-radius:0%;">
+    <div class="container-fluid ">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/home" class="navbar-brand"><b>HR Assistant</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li id="home"><a id="logo" href="{% url 'index' %}"><span class="glyphicon glyphicon-home"></span> <b>Home</b></a>
+                </li>
+                {% if user.is_superuser %}
+                    <li id="createuser">
+                        <a href="{% url 'register' %}">
+                            <span class="glyphicon glyphicon-"></span>
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <b>Createuser</b>
+                        </a>
+                    </li>
+                    <li id="viewuser">
+                        <a href="{% url 'userview' %}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <b>Viewuser</b>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <li id="recruitment">
+                        <a id="text" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-education"></span>
+                            <b>Recruitments</b>
+                        </a>
+                        <ul class="dropdown-menu pendingDrop">
+                            <li><a href="{% url 'upcoming' %}">Upcoming-recruitments</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'postrecruitment' %}">Missed-recruitments</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{% url 'rerecruitment' %}">Re-recruitments</a></li>
+                        </ul>
+                    </li>
+                    <li id="addcollege">
+                        <a href="{% url 'collegecreate' %}"><span class="glyphicon glyphicon-plus"></span><b>Add
+                            college</b></a>
+                    </li>
+                    <li id="report">
+                        <a class="report" href="{% url 'report' %}">
+                            <span class="glyphicon glyphicon-send"></span>
+                            <b>Report</b>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li class="log">
+                        <a href="{% url 'login' %}">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <b>Hello, {{ user.username }}</b>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="log">
+                        <a href="{% url 'login' %}">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            <b>Login</b>
+                        </a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block link %}
+{% endblock %}
+</body>
+</html>
