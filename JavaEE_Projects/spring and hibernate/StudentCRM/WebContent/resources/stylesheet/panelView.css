@@ -1,0 +1,55 @@
+
+.panelViewOuter{
+	margin-top:55px;
+}
+i{
+	color:blue;
+	font-weight:bolder;
+	font-family:Arial, Helvetica, sans-serif;
+}
+textarea{
+	resize:none;
+	background-color:white;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	color:blue;
+	font-weight:bolder;
+	font-family:Arial, Helvetica, sans-serif;
+	outline:none;
+	border:none;
+}
+.pagination li{
+	cursor:pointer;
+}
+
+.nav-pills li{
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+
+.gridOuter{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.grid{
+	height:350px;
+	border:0.5px ridge grey;
+	border-radius:10px;
+	border-top-left-radius:20px;
+	border-top-right-radius: 20px;
+	box-shadow:2px 3px 10px rgb(198, 192, 192),-2px 3px 10px rgb(198, 192, 192);
+}
+
+.header{
+	background-color:#EDEAEA;
+}
+.header h4{
+	text-align: center;
+	color:#000059;
+}
+#email{
+	overflow:auto;
+}

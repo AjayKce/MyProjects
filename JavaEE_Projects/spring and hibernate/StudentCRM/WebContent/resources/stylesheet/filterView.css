@@ -1,0 +1,14 @@
+@media screen and (max-width: 500px) {
+    .break {
+        display:none;
+    }
+}
+.addStudentOuter{
+	margin-top:55px;
+}
+.table th, .table td { 
+    border-top: none !important; 
+}
+.filterOuter{
+    box-shadow:2px 3px 10px rgb(198, 192, 192),-2px 3px 10px rgb(198, 192, 192);
+}

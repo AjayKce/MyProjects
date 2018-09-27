@@ -1,0 +1,27 @@
+use web_student_crm;
+create table student(
+    id int not null auto_increment,
+    user_id int default null,
+    first_name varchar(45),
+    last_name varchar(45),
+    roll_no varchar(10),
+    gender varchar(20),
+    blood_group varchar(10),
+    department varchar(10),
+    current_year varchar(10),
+    current_semester varchar(10),
+    email varchar(45),
+    phone_number varchar(10),
+    date_of_birth date,
+    pan_card varchar(45) default null,
+    account_number varchar(45) default null,
+    ifsc varchar(45) default null,
+    aadhar varchar(45) default null,
+    vote_id varchar(45) default null,
+    parent_name varchar(45),
+    parent_gender varchar(20),
+    parent_phone_number varchar(45),
+    address varchar(100),
+    pin_code varchar(10),
+    primary key(id)
+)

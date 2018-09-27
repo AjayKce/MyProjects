@@ -1,0 +1,16 @@
+.addStudentOuter{
+	margin-top:55px;
+}
+.studentFormInput{
+	margin-top:5px;
+	padding-bottom:5px;
+	padding-top:5px;
+	box-shadow:2px 3px 10px rgb(198, 192, 192),-2px 3px 10px rgb(198, 192, 192);
+}
+.addStudentButton{
+	margin-top:4px;
+	color:#233BE1
+}
+.studentAddImg{
+	margin-top:10%;
+}

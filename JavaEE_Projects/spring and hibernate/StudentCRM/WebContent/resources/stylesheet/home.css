@@ -1,0 +1,23 @@
+#userImg{
+	width:300px;
+}
+#addStudent,#viewPanel{
+	width:150px;
+}
+#filterStudent,#viewTable{
+	padding-top:1px;
+	width:145px;
+}
+.left{
+	text-align:right;
+	font-weight:bolder;
+}
+.right{
+	text-align:left;
+	font-weight:bold;
+	font-family:cursive;
+	color:blue;
+}
+.table th, .table td { 
+    border-top: none !important; 
+}
