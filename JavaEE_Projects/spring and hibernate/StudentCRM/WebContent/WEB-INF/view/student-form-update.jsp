@@ -68,6 +68,18 @@
                                     View Table
                                 </a>
                             </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportWord">
+                                    <span class="fa fa-file-word-o"></span>
+                                    Word Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportExcel">
+                                    <span class="fa fa-file-excel-o"></span>
+                                    Excel Report
+                                </a>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="${pageContext.request.contextPath}/student/home">Hello, <%=owner.getUsername() %></a></li>
@@ -304,7 +316,7 @@
                             </span>
                         </span>
                     </span>
-                    <p align="center"><input class="btn btn-info btn-md addStudentButton" type="submit" value="Save Student"></p>
+                    <p align="center"><input style="width:20%;color:white" class="btn btn-info btn-md addStudentButton" type="submit" value="Save Student"></p>
                 </form:form>
             </div>
         </div>

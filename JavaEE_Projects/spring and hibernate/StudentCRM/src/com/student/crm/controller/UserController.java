@@ -73,6 +73,56 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping("/resetPassword")
+	public String resetPassword(Model theModel) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			theModel.addAttribute("login",userService.getUser(userId));
+			request.setAttribute("owner",userService.getUser(userId));
+			return "resetPasswordPage";
+		}
+	}
+	
+	@PostMapping("/processReset")
+	public String processReset(@Valid @ModelAttribute("login") User theUser,BindingResult theBindingResult) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			User user = (User) userService.getUser(userId);
+			String currentPassword = request.getParameter("currentPassword");
+			String rePassword = request.getParameter("rePassword");
+			if(theBindingResult.hasErrors()) {
+				request.setAttribute("owner",user);
+				return "resetPasswordPage";
+			}
+			else if(!currentPassword.equals(user.getPassword())) {
+				request.setAttribute("passError","incorrect password");
+				request.setAttribute("owner",user);
+				return "resetPasswordPage";
+			}
+			else if(!rePassword.equals(theUser.getPassword())) {
+				request.setAttribute("passError","password doesn't match");
+				request.setAttribute("owner",user);
+				return "resetPasswordPage";
+			}
+			else {
+				userService.addStudent(theUser);
+				return "redirect:/login";
+			}
+		}	
+	}
+	
 	@PostMapping("/addStudent")
 	public String add(@Valid @ModelAttribute("login") User theUser,BindingResult theBindingResult,HttpServletRequest request) {
 		if(session.getAttribute("userId")==null) {

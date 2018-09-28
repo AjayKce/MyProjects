@@ -71,6 +71,18 @@
                                     View Table
                                 </a>
                             </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportWord">
+                                    <span class="fa fa-file-word-o"></span>
+                                    Word Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportExcel">
+                                    <span class="fa fa-file-excel-o"></span>
+                                    Excel Report
+                                </a>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="${pageContext.request.contextPath}/student/home">Hello, <%=owner.getUsername() %></a></li>
@@ -86,15 +98,15 @@
                     <span style="color:blue" ><br>Do you wish to delete this Student</span>
                     <center>
                     <p align="center" class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
-                    	<a href="${pageContext.request.contextPath}/student/<%=request.getAttribute("command")%>?id=<%=request.getAttribute("id")%>">
-                    	<button style="width:100%" class="btn btn-danger btn-md addStudentButton">Delete</button>
+                    	<a style="color:white" href="${pageContext.request.contextPath}/student/<%=request.getAttribute("command")%>?id=<%=request.getAttribute("id")%>">
+                    	<button style="width:100%;color:white;" class="btn btn-danger btn-md addStudentButton">Delete</button>
                     	</a>
                     </p>
                     </center>
                     <center>
                     <p align="center" class="col-lg-6 col-md-6 col-xs-6 col-sm-6">
                     	<a href="${pageContext.request.contextPath}/student/home">
-                    	<button style="width:100%" class="btn btn-success btn-md addStudentButton">Home</button>
+                    	<button style="width:100%;color:white" class="btn btn-success btn-md addStudentButton">Home</button>
                     	</a>
                     </p>
                     </center>
@@ -323,7 +335,7 @@
                     </span>
                     <p align="center">
                     	<a href="${pageContext.request.contextPath}/student/<%=request.getAttribute("command")%>?id=<%=request.getAttribute("id")%>">
-                    	<button class="btn btn-danger btn-md addStudentButton">Delete</button>
+                    	<button style="width:20%;color:white;" class="btn btn-danger btn-md addStudentButton">Delete</button>
                     	</a>
                     </p>
                 </form:form>

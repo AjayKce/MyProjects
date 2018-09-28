@@ -102,6 +102,48 @@ public class StudentController {
 		}
 	}
 	
+	@RequestMapping("/exportWord")
+	public String exportWord(Model theModel) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Student> students = studentService.getStudents(userId);
+			if(students.size()==0) {
+				return "redirect:/student/showStudentFormToAdd";
+			}
+			else {
+				theModel.addAttribute("students",students);
+				return "exportToWord";
+			}
+		}
+	}
+	
+	@RequestMapping("/exportExcel")
+	public String exportExcel(Model theModel) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Student> students = studentService.getStudents(userId);
+			if(students.size()==0) {
+				return "redirect:/student/showStudentFormToAdd";
+			}
+			else {
+				theModel.addAttribute("students",students);
+				return "exportToExcel";
+			}
+		}
+	}
+	
 	@RequestMapping("/showStudentPanelView")
 	public String showStudentPanelView(Model theModel) {
 		if(session.getAttribute("userId")==null) {
@@ -114,8 +156,13 @@ public class StudentController {
 		else {
 			request.setAttribute("owner",userService.getUser(userId));
 			List<Student> students = studentService.getStudents(userId);
+			if(students.size()==0) {
+				return "redirect:/student/showStudentFormToAdd";
+			}
+			else {
 			theModel.addAttribute("students", students);
 			return "panelView";
+			}
 		}
 	}
 	
@@ -242,8 +289,13 @@ public class StudentController {
 		else {
 			request.setAttribute("owner",userService.getUser(userId));
 			List<Student> students = studentService.getStudents(userId);
+			if(students.size()==0) {
+				return "redirect:/student/showStudentFormToAdd";
+			}
+			else {
 			theModel.addAttribute("students", students);
 			return "tableView";
+			}
 			
 		}
 	}

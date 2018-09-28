@@ -68,6 +68,18 @@
                                     View Table
                                 </a>
                             </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportWord">
+                                    <span class="fa fa-file-word-o"></span>
+                                    Word Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportExcel">
+                                    <span class="fa fa-file-excel-o"></span>
+                                    Excel Report
+                                </a>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="${pageContext.request.contextPath}/student/home">Hello, <%=owner.getUsername() %></a></li>
@@ -94,7 +106,7 @@
                     <span>
                         <span class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                <label for="firstName">First name : </label>
+                                <label for="firstName">First name(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                 <form:errors path="firstName" cssClass="error" />
                                 <span class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
@@ -102,7 +114,7 @@
                                 </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                <label for="lastName">Last name : </label>
+                                <label for="lastName">Last name(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                 <form:errors path="lastName" cssClass="error" />
                                 <span class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
@@ -110,7 +122,7 @@
                                 </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="rollNo">Roll number : </label>
+                                    <label for="rollNo">Roll number(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="rollNo" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
@@ -118,7 +130,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="gender">Gender : </label>
+                                    <label for="gender">Gender(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="gender" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -130,7 +142,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="gender">Blood Group : </label>
+                                    <label for="gender">Blood Group(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="bloodGroup" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
@@ -148,7 +160,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="dateOfBirth">D.O.B : </label>
+                                    <label for="dateOfBirth">D.O.B(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="dateOfBirth" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -156,7 +168,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="gender">Department : </label>
+                                    <label for="gender">Department(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="department" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
@@ -175,7 +187,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="gender">Current Year : </label>
+                                    <label for="gender">Current Year(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="currentYear" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
@@ -189,7 +201,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-4 col-md-4 col-xs-12 col-sm-12">
-                                    <label for="gender">Current Semester : </label>
+                                    <label for="gender">Current Semester(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="currentSemester" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
@@ -207,7 +219,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-                                    <label for="email">Email : </label>
+                                    <label for="email">Email(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="email" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-send"></i></span>
@@ -215,7 +227,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
-                                    <label for="phoneNumber">Phone Number : </label>
+                                    <label for="phoneNumber">Phone Number(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="phoneNumber" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -263,7 +275,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-                                    <label for="parentName">Parent Name : </label>
+                                    <label for="parentName">Parent Name(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="parentName" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-adjust"></i></span>
@@ -271,7 +283,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-                                    <label for="parentGender">Gender : </label>
+                                    <label for="parentGender">Gender(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="parentGender" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -283,7 +295,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-                                    <label for="parentPhoneNumber">Phone Number : </label>
+                                    <label for="parentPhoneNumber">Phone Number(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="parentPhoneNumber" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -291,7 +303,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-                                    <label for="pinCode">Pin Code : </label>
+                                    <label for="pinCode">Pin Code(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="pinCode" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-pushpin"></i></span>
@@ -299,7 +311,7 @@
                                     </span>
                             </span>
                             <span class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-                                    <label for="address">Address : </label>
+                                    <label for="address">Address(<i class="fa fa-asterisk" style="font-size:10px;color:red"></i>) : </label>
                                     <form:errors path="address" cssClass="error" />
                                     <span class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
@@ -308,7 +320,7 @@
                             </span>
                         </span>
                     </span>
-                    <p align="center"><input class="btn btn-info btn-md addStudentButton" type="submit" value="Add Student"></p>
+                    <p align="center"><input style="width:30%;color:white" class="btn btn-info btn-md addStudentButton" type="submit" value="Add Student"></p>
                 </form:form>
             </div>
         </div>

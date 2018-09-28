@@ -13,11 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <link href="${pageContext.request.contextPath}/resources/stylesheet/home.css" rel="stylesheet">
-        <script type="text/javascript">
-            function preventBack() { window.history.forward(); }
-            setTimeout("preventBack()", 0);
-            window.onunload = function () { null };
-        </script>
     </head>
 
     <body>
@@ -70,6 +65,18 @@
                                     View Table
                                 </a>
                             </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportWord">
+                                    <span class="fa fa-file-word-o"></span>
+                                    Word Report
+                                </a>
+                            </li>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/exportExcel">
+                                    <span class="fa fa-file-excel-o"></span>
+                                    Excel Report
+                                </a>
+                            </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
@@ -118,17 +125,26 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                	<td colspan="2">
+                                		<p align="center">
+                                            <a href="${pageContext.request.contextPath}/resetPassword">
+                                                <button style="width:40%" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-refresh"></i> Reset Password</button>
+                                            </a>
+                                        </p>
+                                	</td>
+                                </tr>
+                                <tr>
                                 	<td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <p align="center">
                                             <a href="${pageContext.request.contextPath}/showDeleteUserAccountForm">
-                                                <button style="width:80%" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete Account</button>
+                                                <button style="width:80%" class="btn btn-sm btn-danger"><i class="fa fa-user-times"></i> Delete Account</button>
                                             </a>
                                         </p>
                                     </td>
                                     <td class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <p align="center">
                                             <a href="${pageContext.request.contextPath}/logout">
-                                                <button style="width:80%" class="btn btn-warning"><i class="glyphicon glyphicon-log-out"></i> Logout</button>
+                                                <button style="width:80%" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-log-out"></i> Logout</button>
                                             </a>
                                         </p>
                                     </td>
@@ -144,6 +160,7 @@
                                             <p align="center">
                                                 <a href="${pageContext.request.contextPath}/student/showStudentFormToAdd">
                                                             <button class="btn btn-primary">
+                                                            <i class="fa fa-user-plus"></i>
                                                                  Add Student
                                                             </button>
                                                         </a>
@@ -157,6 +174,7 @@
                                             <p align="center">
                                                 <a href="${pageContext.request.contextPath}/student/showStudentFilterView">
                                                                 <button class="btn btn-primary">
+                                                                <i class="fa fa-filter"></i>
                                                                      Filter Student
                                                                 </button>
                                                             </a>
@@ -171,6 +189,7 @@
                                             <p align="center">
                                                 <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
                                                             <button class="btn btn-primary">
+                                                             <i class="fa fa-television"></i>
                                                                View Panel
                                                             </button>
                                                         </a>
@@ -183,6 +202,7 @@
                                             <p align="center">
                                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                                             <button class="btn btn-primary">
+                                                             <i class="fa fa-table"></i>
                                                                 View Table
                                                             </button>
                                                         </a>

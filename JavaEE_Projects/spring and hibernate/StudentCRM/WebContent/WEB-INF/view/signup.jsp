@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>signup-form</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -17,11 +17,6 @@
 				color: red;
 			}
 		</style>
-		<script type="text/javascript">
-			function preventBack() { window.history.forward(); }
-			setTimeout("preventBack()", 0);
-			window.onunload = function () { null };
-		</script>
 	</head>
 
 	<body>
@@ -40,8 +35,15 @@
 							</div>
 							<div class="collapse navbar-collapse" id="myNavbar">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="#">Home</a></li>
-								</ul>
+                                    <li class="active">
+                                    	<a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                    <a href="#"><span class="glyphicon glyphicon-floppy-disk"></span> About</a>
+                                    </li>
+                                </ul>
 								<ul class="nav navbar-nav navbar-right">
 									<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 								</ul>

@@ -35,8 +35,15 @@
 							</div>
 							<div class="collapse navbar-collapse" id="myNavbar">
 								<ul class="nav navbar-nav">
-									<li class="active"><a href="#">Home</a></li>
-								</ul>
+                                    <li class="active">
+                                    	<a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                    <a href="#"><span class="glyphicon glyphicon-floppy-disk"></span> About</a>
+                                    </li>
+                                </ul>
 								<ul class="nav navbar-nav navbar-right">
 									<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 								</ul>
@@ -49,7 +56,7 @@
 					<p align="center">
 					<img class="img-responsive" src="${pageContext.request.contextPath}/resources/images/logo.png">
 					</p>
-					<h3 align="center">Successfully send reset link to your email</h3>
+					<h4 align="center">Successfully send reset link to your email</h4>
 					<span class="col-lg-4 col-md-4 col-xs-4 col-sm-4"></span>
 					<span class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
 						<a href="https://mail.google.com/mail"><button style="width:100%" class="btn btn-success">reset</button></a>
