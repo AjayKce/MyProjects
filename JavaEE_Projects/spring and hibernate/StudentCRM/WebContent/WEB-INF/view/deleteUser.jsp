@@ -31,7 +31,7 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="">CRM</a>
+                            <a class="navbar-brand" href="">STUMAN</a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
@@ -47,22 +47,22 @@
                                          Add Student
                                     </a>
                                 </li>
+                                 <li>
+                                <a href="${pageContext.request.contextPath}/student/export">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    Filter Report
+                                </a>
+                            </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/student/showStudentFilterView">
                                     <span class="glyphicon glyphicon-filter"></span>
                                     Filter Student
                                 	</a>
                                 </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
-                                        <span class="glyphicon glyphicon-blackboard"></span>
-                                         View Panel
-                                    </a>
-                                </li>
                                <li>
                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    View Table
+                                    View Student
                                 </a>
                             </li>
                             <li>

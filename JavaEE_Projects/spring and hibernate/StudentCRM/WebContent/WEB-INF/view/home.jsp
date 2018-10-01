@@ -31,7 +31,7 @@
                               <span class="icon-bar"></span>
                               <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="">CRM</a>
+                            <a class="navbar-brand" href="">STUMAN</a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
@@ -54,15 +54,15 @@
                                 	</a>
                                 </li>
                                 <li>
-                                    <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
-                                        <span class="glyphicon glyphicon-blackboard"></span>
-                                         View Panel
-                                    </a>
-                                </li>
+                                <a href="${pageContext.request.contextPath}/student/export">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    Report
+                                </a>
+                            </li>
                                <li>
                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    View Table
+                                    View Student
                                 </a>
                             </li>
                             <li>
@@ -187,10 +187,10 @@
                                         <p align="center">
                                             <img id="viewPanel" class="img-responsive" src="${pageContext.request.contextPath}/resources/images/viewPanel.png" />
                                             <p align="center">
-                                                <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
+                                                <a href="${pageContext.request.contextPath}/student/export">
                                                             <button class="btn btn-primary">
                                                              <i class="fa fa-television"></i>
-                                                               View Panel
+                                                               Report
                                                             </button>
                                                         </a>
                                             </p>
@@ -203,7 +203,7 @@
                                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                                             <button class="btn btn-primary">
                                                              <i class="fa fa-table"></i>
-                                                                View Table
+                                                                View Student
                                                             </button>
                                                         </a>
                                             </p>

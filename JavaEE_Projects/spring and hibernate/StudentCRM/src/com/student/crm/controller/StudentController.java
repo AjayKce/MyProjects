@@ -1,5 +1,10 @@
 package com.student.crm.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.student.crm.entity.Student;
+import com.student.crm.entity.User;
 import com.student.crm.service.StudentService;
 import com.student.crm.service.UserService;
 
@@ -67,7 +73,13 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/addStudent")
-	public String addStudent(@Valid @ModelAttribute("student") Student theStudent, BindingResult theBindingResult) {
+	public String addStudent(@Valid @ModelAttribute("student") Student theStudent, BindingResult theBindingResult) throws ParseException {
+		   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+		   LocalDateTime now = LocalDateTime.now();  
+		   String date=dtf.format(now);
+		   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	        Date date1 = sdf.parse(theStudent.getDateOfBirth());
+	        Date date2 = sdf.parse(date);
 		if(session.getAttribute("userId")==null) {
 			session.setAttribute("userId",0);
 		}
@@ -76,14 +88,24 @@ public class StudentController {
 			return "redirect:/login";
 		}
 		else {
+			User user = (User) userService.getUser(userId);
 			request.setAttribute("owner",userService.getUser(userId));
 			if(theBindingResult.hasErrors()) {
+				return "student-form";
+			}
+			else if (date1.compareTo(date2) > 0) {
+				request.setAttribute("emailError", "D.O.B can't be in future");
+				return "student-form";
+			}
+			else if((user.getEmail()).equals(theStudent.getEmail())) {
+				request.setAttribute("emailError", "user's mail cannot be accepted");
 				return "student-form";
 			}
 			else if(studentService.emailExists(theStudent.getEmail(),userId)) {
 				request.setAttribute("emailError", "This email is already taken");
 				return "student-form";
 			}
+			
 			else if(studentService.rollNumberExists(theStudent.getRollNo(),userId)) {
 				request.setAttribute("rollError", "This Roll number is already taken");
 				return "student-form";
@@ -140,28 +162,6 @@ public class StudentController {
 			else {
 				theModel.addAttribute("students",students);
 				return "exportToExcel";
-			}
-		}
-	}
-	
-	@RequestMapping("/showStudentPanelView")
-	public String showStudentPanelView(Model theModel) {
-		if(session.getAttribute("userId")==null) {
-			session.setAttribute("userId",0);
-		}
-		int userId = (int) session.getAttribute("userId");
-		if(userId==0) {
-			return "redirect:/login";
-		}
-		else {
-			request.setAttribute("owner",userService.getUser(userId));
-			List<Student> students = studentService.getStudents(userId);
-			if(students.size()==0) {
-				return "redirect:/student/showStudentFormToAdd";
-			}
-			else {
-			theModel.addAttribute("students", students);
-			return "panelView";
 			}
 		}
 	}
@@ -317,6 +317,24 @@ public class StudentController {
 		}
 	}
 	
+	@GetMapping("export")
+	public String export(Model theModel) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			List<Student> students = studentService.getStudents(userId);
+			theModel.addAttribute("students", students);
+			request.setAttribute("owner",userService.getUser(userId));
+			return "exportView";
+		}
+		
+	}
+	
 	@PostMapping("/filterUser")
 	public String filterUser(Model theModel) {
 		if(session.getAttribute("userId")==null) {
@@ -329,7 +347,6 @@ public class StudentController {
 		else {
 			request.setAttribute("owner",userService.getUser(userId));
 			String query = "from Student s where s.userId='"+userId+"'";
-			String view = request.getParameter("view");
 			String rollNumber = request.getParameter("rollNumber");
 			String gender = request.getParameter("gender");
 			String bloodGroup = request.getParameter("bloodGroup");
@@ -357,11 +374,57 @@ public class StudentController {
 			System.out.println(query);
 			List<Student> students = studentService.getFilteredStudents(query);
 			theModel.addAttribute("students", students);
-			if(view.equals("PANEL")) {
-				return "panelView";
+			return "tableView";
+		}
+	}
+	
+	@PostMapping("/filterExport")
+	public String filterExport(Model theModel) {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId==0) {
+			return "redirect:/login";
+		}
+		else {
+			request.setAttribute("owner",userService.getUser(userId));
+			String query = "from Student s where s.userId='"+userId+"'";
+			String export = request.getParameter("export");
+			String rollNumber = request.getParameter("rollNumber");
+			String gender = request.getParameter("gender");
+			String bloodGroup = request.getParameter("bloodGroup");
+			String department = request.getParameter("department");
+			String year = request.getParameter("year");
+			String semester = request.getParameter("semester");
+			if(rollNumber!="") {
+				query=query+" and s.rollNo='"+rollNumber+"'";
+			}
+			if(gender!="") {
+				query=query+" and s.gender='"+gender+"'";
+			}
+			if(bloodGroup!="") {
+				query=query+" and s.bloodGroup='"+bloodGroup+"'";
+			}
+			if(department!="") {
+				query=query+" and s.department='"+department+"'";
+			}
+			if(year!="") {
+				query=query+" and s.currentYear='"+year+"'";
+			}
+			if(semester!="") {
+				query=query+" and s.currentSemester='"+semester+"'";
+			}
+			List<Student> students = studentService.getFilteredStudents(query);
+			theModel.addAttribute("students", students);
+			if(export.equals("WORD")) {
+				return "exportToWord";
+			}
+			else if(export.equals("EXCEL")) {
+				return "exportToExcel";
 			}
 			else {
-				return "tableView";
+				return "exportToWord";
 			}
 		}
 	}

@@ -1,0 +1,9 @@
+<html>
+<head>
+</head>
+<body>
+	<% 
+	response.sendRedirect(request.getContextPath()+"?success=send"); 
+	%>
+</body>
+</html>

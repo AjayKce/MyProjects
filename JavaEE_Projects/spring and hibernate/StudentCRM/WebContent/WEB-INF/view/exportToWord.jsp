@@ -36,7 +36,7 @@
        List<Student> students  = (List<Student>)request.getAttribute("students");
              if (students != null) {
                  response.setContentType("application/msword");
-                 response.setHeader("Content-Disposition", "inline; filename="+ "studentreport.docx");
+                 response.setHeader("Content-Disposition", "attachment; filename="+ "studentreport.doc");
              }
        for(Student temp: students){
       %>

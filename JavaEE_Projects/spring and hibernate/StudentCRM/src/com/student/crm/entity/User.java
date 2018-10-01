@@ -17,11 +17,11 @@ public class User {
 	@Column(name="id")
 	private int id;
 	
-	@Pattern(regexp="^[a-zA-Z]{1,}$",message="firstname is invalid")
+	@Pattern(regexp="^[a-zA-Z]{1,}$",message="firstname is invalid(only alphabets)")
 	@Column(name="first_name")
 	private String firstName;
 	
-	@Pattern(regexp="^[a-zA-Z]{1,}$",message="lastname is invalid")
+	@Pattern(regexp="^[a-zA-Z ]{1,}$",message="lastname is invalid(only alphabets)")
 	@Column(name="last_name")
 	private String lastName;
 	
@@ -33,7 +33,7 @@ public class User {
 	@Column(name="date_of_birth")
 	private String dateOfBirth;
 	
-	@Pattern(regexp="^[a-zA-Z][a-zA-Z0-9]{1,}$",message="username is invalid")
+	@Pattern(regexp="^[a-zA-Z][a-zA-Z0-9]{1,}$",message="username is invalid(starts with alphabets)")
 	@Column(name="username")
 	private String username;
 	

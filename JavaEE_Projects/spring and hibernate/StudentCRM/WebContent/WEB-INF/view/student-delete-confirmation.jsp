@@ -37,7 +37,7 @@
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="">CRM</a>
+                        <a class="navbar-brand" href="">STUMAN</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -59,16 +59,16 @@
                                     Filter Student
                                 </a>
                             </li>
-                            <li> 
-                                <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
-                                    <span class="glyphicon glyphicon-blackboard"></span>
-                                View Panel
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/export">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    Report
                                 </a>
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    View Table
+                                    View Student
                                 </a>
                             </li>
                             <li>
@@ -112,8 +112,8 @@
                     </center>
                 </p>
             </div>
-            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12">
-                <form:form method="POST" cssClass="form studentFormInput" modelAttribute="student">
+            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 studentFormInput">
+                <form:form method="get" cssClass="form" modelAttribute="student">
                     <form:hidden path="id"/>
                     <form:hidden path="userId" />
                     <span>
@@ -333,12 +333,12 @@
                             </span>
                         </span>
                     </span>
+                    </form:form>
                     <p align="center">
-                    	<a href="${pageContext.request.contextPath}/student/<%=request.getAttribute("command")%>?id=<%=request.getAttribute("id")%>">
+                    	<a style="color:white" href="${pageContext.request.contextPath}/student/<%=request.getAttribute("command")%>?id=<%=request.getAttribute("id")%>">
                     	<button style="width:20%;color:white;" class="btn btn-danger btn-md addStudentButton">Delete</button>
                     	</a>
                     </p>
-                </form:form>
             </div>
         </div>
     </div>

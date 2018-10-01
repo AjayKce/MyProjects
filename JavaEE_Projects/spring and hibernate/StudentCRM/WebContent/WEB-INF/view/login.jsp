@@ -21,40 +21,37 @@
                 font-family:cursive;
                 font-weight:bolder;
             }
+            li a,.navbar-brand {
+      color: #fff !important;
+  }
         </style>
     </head>
 
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8 col-md-8 col-xs-0 col-sm-0">
                     <nav class="navbar navbar-inverse">
-                        <div class="container-fluid">
+                        <div class="container">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                                   <span class="icon-bar"></span>
                                   <span class="icon-bar"></span>
                                   <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">CRM</a>
+                                <a class="navbar-brand" href="#">STUMAN</a>
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
-                                <ul class="nav navbar-nav">
-                                    <li class="active">
-                                    	<a href="#"><span class="glyphicon glyphicon-home"></span> Home</a>
-                                    </li>
-                                </ul>
-                                <ul class="nav navbar-nav">
-                                    <li>
-                                    <a href="#"><span class="glyphicon glyphicon-floppy-disk"></span> About</a>
-                                    </li>
-                                </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="${pageContext.request.contextPath}/"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
+                                    <li>
+                                    <a href="${pageContext.request.contextPath}/"><span class="glyphicon glyphicon-floppy-disk"></span> ABOUT</a>
+                                    </li>
+                                    <li><a href=""><span class="glyphicon glyphicon-download"></span> DOWNLOAD</a></li>
+                                    <li><a href="signup"><span class="glyphicon glyphicon-user"></span> SIGN-UP</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
+           <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-xs-0 col-sm-0">
                     <p align="center">
                         <img class="img-responsive" width="50%" src="${pageContext.request.contextPath}/resources/images/log.png">
                         <p align="center" style="color:blue">

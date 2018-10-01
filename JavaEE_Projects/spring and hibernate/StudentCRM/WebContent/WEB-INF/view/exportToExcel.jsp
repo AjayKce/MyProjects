@@ -36,7 +36,7 @@
        List<Student> students  = (List<Student>)request.getAttribute("students");
              if (students != null) {
                  response.setContentType("application/vnd.ms-excel");
-                 response.setHeader("Content-Disposition", "inline; filename="+ "studentreport.xlsx");
+                 response.setHeader("Content-Disposition", "attachment; filename="+ "studentreport.xls");
              }
        for(Student temp: students){
       %>

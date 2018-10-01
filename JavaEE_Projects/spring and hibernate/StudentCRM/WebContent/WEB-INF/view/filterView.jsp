@@ -48,7 +48,7 @@
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="">CRM</a>
+                        <a class="navbar-brand" href="">STUMAN</a>
                     </div>
                     <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav">
@@ -70,16 +70,16 @@
                                     Filter Student
                                 </a>
                             </li>
-                            <li> 
-                                <a href="${pageContext.request.contextPath}/student/showStudentPanelView">
-                                    <span class="glyphicon glyphicon-blackboard"></span>
-                                View Panel
+                            <li>
+                                <a href="${pageContext.request.contextPath}/student/export">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    Report
                                 </a>
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath}/student/showStudentTableView">
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    View Table
+                                    View Student
                                 </a>
                             </li>
                             <li>
@@ -206,19 +206,6 @@
                                     <option value="VI">VI</option>
                                     <option value="VII">VII</option>
                                     <option value="VIII">VIII</option>
-                                </select>
-                                </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-                                <label for="view">View :</label>
-                                <span style="width:100%" class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-desktop"></i></span>
-                                <select class="form-control" id="view" name="view" required>
-                                    <option class="viewDrop"></option>
-                                    <option value="PANEL">PANEL VIEW</option>
-                                    <option value="TABLE">TABLE VIEW</option>
                                 </select>
                                 </span>
                             </td>

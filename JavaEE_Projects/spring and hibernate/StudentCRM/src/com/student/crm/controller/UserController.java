@@ -1,5 +1,11 @@
 package com.student.crm.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -13,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.student.crm.email.ContactUs;
 import com.student.crm.email.ForgetSendMail;
 import com.student.crm.email.SendMail;
 import com.student.crm.entity.User;
@@ -39,9 +46,35 @@ public class UserController {
 	
 	SendMail sendMail = new SendMail();
 	
+	ContactUs contact = new ContactUs();
+	
 	ForgetSendMail sendForgetMail = new ForgetSendMail();
 	
 	@RequestMapping("/")
+	public String about() {
+		if(session.getAttribute("userId")==null) {
+			session.setAttribute("userId",0);
+		}
+		int userId = (int) session.getAttribute("userId");
+		if(userId!=0) {
+			return "redirect:student/home";
+		}
+		else {
+		request.setAttribute("success",request.getParameter("success"));
+		return "about";
+		}
+	}
+	
+	@PostMapping("/contactUs")
+	public String contactUs() {
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String comment = request.getParameter("comments");
+		contact.send(name, email, comment);
+		return "sendConfirm";
+	}
+	
+	@RequestMapping("/signup")
 	public String signup(Model theModel) {
 		if(session.getAttribute("userId")==null) {
 			session.setAttribute("userId",0);
@@ -124,7 +157,13 @@ public class UserController {
 	}
 	
 	@PostMapping("/addStudent")
-	public String add(@Valid @ModelAttribute("login") User theUser,BindingResult theBindingResult,HttpServletRequest request) {
+	public String add(@Valid @ModelAttribute("login") User theUser,BindingResult theBindingResult,HttpServletRequest request) throws ParseException {
+		 	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");  
+		    LocalDateTime now = LocalDateTime.now();  
+		    String date=dtf.format(now);
+		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	        Date date1 = sdf.parse(theUser.getDateOfBirth());
+	        Date date2 = sdf.parse(date);
 		if(session.getAttribute("userId")==null) {
 			session.setAttribute("userId",0);
 		}
@@ -134,6 +173,10 @@ public class UserController {
 		}
 		else {
 		if(theBindingResult.hasErrors()) {
+			return "signup";
+		}
+		else if (date1.compareTo(date2) > 0) {
+			request.setAttribute("emailError", "D.O.B can't be in future");
 			return "signup";
 		}
 		else if(!(theUser.getPassword().equals(request.getParameter("rePassWord")))) {

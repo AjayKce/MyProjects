@@ -48,7 +48,7 @@ public class SendMail {
 				"                <span class='col-lg-4 col-md-4 col-xs-4 col-sm-4'></span>" + 
 				"                <span class='col-lg-4 col-md-4 col-xs-4 col-sm-4'>" + 
 				"                    <center>"
-				+ "						<a href='http://localhost:8080/StudentCRM/verifyEmail?id="+userId+"&validator="+validator+"'>" + 
+				+ "						<a href='http://172.16.76.189:8080/StudentCRM/verifyEmail?id="+userId+"&validator="+validator+"'>" + 
 				"                        <button style='width:30%;padding:10px;background-color:green;color:white' class='btn btn-success'>Verify</button>" + 
 				"                    </a><center>" + 
 				"                </span>" + 

@@ -1,4 +1,6 @@
-
+.navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
 .LoginHeader{
     border-radius :25px 0px 25px 0px;
     background-color:#ffeaa7;
